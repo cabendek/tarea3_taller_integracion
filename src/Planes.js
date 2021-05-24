@@ -18,13 +18,14 @@ export default class Planes extends React.Component {
                   Destino: ({Math.round(flight.destination[0])}, {Math.round(flight.destination[1])})<br></br>
                   Asientos: {flight.seats}<br></br>
 
-                  <div class="dropup" style={{padding:"3px"}}>
-                    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                  <div className="dropup" style={{padding:"3px"}}>
+                    <button type="button" className="btn btn-info dropdown-toggle" data-toggle="dropdown">
                       Pasajeros
                     </button>
-                    <div class="dropdown-menu" style={{borderRadius:"10px"}}>
+                    <div className="dropdown-menu" style={{borderRadius:"10px"}}>
                       {flight.passengers.map(pasajero=>
-                        <a class="dropdown-item">{pasajero.name} : {pasajero.age}</a>
+                        // eslint-disable-next-line
+                        <a className="dropdown-item">{pasajero.name} : {pasajero.age}</a>
                       )}
                     </div>
                   </div>
@@ -40,8 +41,8 @@ export default class Planes extends React.Component {
       <div className="container-fluid">  
         <div className="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
           <div className="col-3">
-          <button onClick={this.props.quitInfo} class="btn btn-outline-info shadow lg-3" style={{marginTop:"0", color:"rgb(143, 143, 143)"}} >Ocultar Información</button>
-            <button onClick={this.props.getInfo} class="btn btn-info shadow lg-3" style={{marginTop:"10%", color:"black"}} ><strong>OBTENER INFORMACIÓN</strong></button>
+          <button onClick={this.props.quitInfo} className="btn btn-outline-info shadow lg-3" style={{marginTop:"0", color:"rgb(143, 143, 143)"}} >Ocultar Información</button>
+            <button onClick={this.props.getInfo} className="btn btn-info shadow lg-3" style={{marginTop:"10%", color:"black"}} ><strong>OBTENER INFORMACIÓN</strong></button>
             <br></br><br></br><p style={{color:"rgb(143, 143, 143)"}}>Para ver más información de los vuelos, haz scroll hacia la derecha.</p>
           </div>
           {information_flight}  

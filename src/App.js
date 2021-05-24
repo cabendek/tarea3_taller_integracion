@@ -9,7 +9,7 @@ import MyForm from "./Chat.js";
 //import Planes from "./Planes"
 
 const io = require("socket.io-client")
-const socket = io.connect('ws://tarea-3-websocket.2021-1.tallerdeintegracion.cl', {
+const socket = io.connect('wss://tarea-3-websocket.2021-1.tallerdeintegracion.cl', {
     path:'/flights'
 });
 document.body.style.backgroundColor="rgb(21, 23, 25)"
@@ -60,21 +60,21 @@ export default class App extends React.Component {
 
   render () {
     return(
-      <div class="root">
+      <div className="root">
         <div>
           <MapaMundi
           flights= {this.state.flights}
           position= {this.state.position}
           />
         </div>
-        <div class="information">
+        <div className="information">
           <Planes
           getInfo= {this.getInfo}
           quitInfo= {this.quitInfo}
           flights= {this.state.flights}
           />
         </div>
-        <div class="chat">
+        <div className="chat">
           <MyForm/>
         </div>
       </div>
